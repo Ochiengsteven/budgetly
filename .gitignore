@@ -11,6 +11,9 @@
 /.env*
 !/.env*.erb
 
+#  Ignore the default lock file.
+node_modules/
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
