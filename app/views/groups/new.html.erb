@@ -1,0 +1,82 @@
+<div class='main_div'>
+  <nav class="flex justify-between bg-blue-500 items-center px-4">
+    <div class='burger_menu'>
+      <%= link_to groups_path, class: 'back_btn' do %>
+        <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back"/>
+      <% end %>
+    </div>
+    <p>CATEGORY</p>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
+  </nav>
+
+  <section class="mx-9">
+    <%= form_with(model: @group, url: groups_path, local: true) do |form| %>
+        <% if @group.errors.any? %>
+        <% @group.errors.full_messages_for(:icon).each do |msg| %>
+            <p class ='error'> <%= msg %> </p>
+        <% end %>
+        <% end %>
+    
+        <p class = 'add_category'> Add your category </p>
+        <div class="field">
+        <%= form.text_field :name, placeholder: 'Category name' %>
+        </div>
+    
+        <div class="field">
+        <%= form.text_field :icon, placeholder: 'Icon URL' %>
+        </div>
+    
+    
+        <div class="actions">
+        <%= form.submit 'ADD CATEGORY'%>
+        </div>
+     <% end %>
+ 
+     <div class="overflow-x-auto">
+         <h3>Icon URLs suggestions:</h3>
+         
+         <table class="min-w-full">
+             <thead>
+             <tr>
+                 <th class="">Category</th>
+                 <th>Icon URL</th>
+             </tr>
+             </thead>
+             <tbody>
+             <tr>
+                 <td class="font-semibold text-right">Entertainment:</td>
+                 <td class="copyable-url">https://img.icons8.com/ios/50/theatre-mask.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold text-right">Groceries:</td>
+                 <td class="copyable-url">https://img.icons8.com/emoji/48/banana-emoji.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold text-right">Bills:</td>
+                 <td class="copyable-url">https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-taxes-banking-flaticons-lineal-color-flat-icons-4.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold text-right">Shopping:</td>
+                 <td class="copyable-url">https://img.icons8.com/fluency/48/shopaholic.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold text-right">Transport:</td>
+                 <td class="copyable-url">https://img.icons8.com/fluency/48/sedan.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold text-right">Eating out:</td>
+                 <td class="copyable-url">https://img.icons8.com/fluency/48/waiter.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold text-right">Holiday:</td>
+                 <td class="copyable-url">https://img.icons8.com/fluency/48/beach.png</td>
+             </tr>
+             <tr>
+                 <td class="font-semibold">Personal care:</td>
+                 <td class="copyable-url">https://img.icons8.com/fluency/48/spa-mask.png</td>
+             </tr>
+             </tbody>
+         </table>
+     </div>
+  </section>
+</div>
