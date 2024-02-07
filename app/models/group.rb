@@ -2,12 +2,12 @@
 
 class Group < ApplicationRecord
   belongs_to :user
-  # has_many :entities, dependent: :destroy
+  has_many :entities, dependent: :destroy
 
   validates :name, presence: true
   validates :icon, presence: true
 
-  # validate :valid_icon_format
+  validate :valid_icon_format
 
   private
 
