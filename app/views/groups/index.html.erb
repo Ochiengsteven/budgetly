@@ -1,5 +1,5 @@
 <div class='main_div h-[90vh]'>
-  <nav class="flex justify-between bg-blue-500 items-center px-4">
+  <nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
     <div class='burger_menu'>
       <%= link_to groups_path, class: 'back_btn' do %>
         <img class='back_btn' src="https://img.icons8.com/ios/50/ffffff/menu--v7.png" alt="menu--v7"/>
@@ -11,7 +11,7 @@
   <div class = 'groups_page px-6'>
   <div class='total_amount'>
     <p>Total spendings:</p>
-    <p><span>$<%= @total_amount %><span></p>
+    <p>Kshs <%= @total_amount %></p>
   </div>
   <div class='groups'>
   <% @groups.each do |group| %>
@@ -23,7 +23,7 @@
         <p class='group_name'><%= group.name %><br>
         <span class = 'date'><%= group.created_at.strftime("%Y-%m-%d")%></span>
         </p>
-        <p>Total: 0 </p>
+        <p>Total: Kshs <%= group.entities.sum(:amount) %> </p>
       </div>
     <% end %>
   <% end %>

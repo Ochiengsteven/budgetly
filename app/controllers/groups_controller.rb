@@ -6,9 +6,9 @@ class GroupsController < ApplicationController
     @groups = @user.groups.order(created_at: :desc)
     @total_amount = 0
 
-    # @groups.each do |group|
-    #   @total_amount += group.entities.sum(:amount)
-    # end
+    @groups.each do |group|
+      @total_amount += group.entities.sum(:amount)
+    end
   end
 
   def new
