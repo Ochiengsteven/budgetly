@@ -8,6 +8,8 @@ gem 'foreman'
 
 gem 'turbolinks'
 
+gem 'rails-controller-testing'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3'
 
