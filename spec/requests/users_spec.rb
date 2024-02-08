@@ -19,7 +19,9 @@ RSpec.describe User, type: :request do
     end
 
     it 'includes correct placeholder text in the response body' do
-      expect(response.body).to include('class="text-gray-600 login no-underline bg-[#3978c3] w-[80vw] p-4 text-center rounded" href="/users/sign_in">LOG IN</a>')
+      expected_text = 'class="text-gray-600 login no-underline bg-[#3978c3] w-[80vw] ' \
+                      'p-4 text-center rounded" href="/users/sign_in">LOG IN</a>'
+      expect(response.body).to include(expected_text)
     end
   end
 end
