@@ -1,31 +1,37 @@
-<div class='main_div'>
-    <nav>
-        <div class='burger_menu'>
+<% @groups.each do |group| %>
+    <div class='container-div'>
+      <nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
+      <div class='burger_menu'>
         <%= link_to groups_path, class: 'back_btn' do %>
             <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back"/>
         <% end %>
         </div>
-        <p><%= @group.name %></p>
-            <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
-    </nav>
-    <div class = 'total_amount'>
+        <p><%= group.name %></p>
+          <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
+      </nav>
+  
+      <div class='mx-4 flex'>
         <p>Total amount:</p>
-        <p>Kshs <%= @total %></p>
-    </div>
-    <%= button_to "Delete Category", group_path(@group), method: :delete, class: 'delete_btn' %>
+        <p>Kshs <%= group.entities.sum(:amount) %></p>
+      </div>
 
-    <% @entities.each do |entity| %>
-    <div class="individual_entity">
-        <%= link_to group_entity_path(@group, entity), class: 'entity-link' do %>
+
+      <%= button_to "Delete Category", group_path(group), method: :delete, class: 'bg-red-300 p-2 mx-4 border-round text-stone-600' %>
+  
+      <% group.entities.each do |entity| %>
+        <div class="mx-4">
+          <%= link_to group_entity_path(group, entity), class: 'entity-link' do %>
             <p><%= entity.name %><br>
-                <span class='date'><%= entity.created_at.strftime("%Y-%m-%d") %></span>
+               <span class='date'><%= entity.created_at.strftime("%Y-%m-%d") %></span>
             </p>
             <p>Kshs <%= entity.amount %></p>
-        <% end %>
+          <% end %>
+        </div>
+      <% end %>
+  
+      <footer id='new_category' class="w-screen flex justify-center py-2 text-gray-300">
+        <%= link_to 'ADD TRANSACTION', new_group_entity_path(group), class: 'text-center w-[86vw] h-14 pt-4 no-underline border-round bg-blue-500' %>
+      </footer>
     </div>
-    <% end %>
-
-    <footer id = 'new_category'>
-     <%=link_to 'ADD TRANSACTION', new_group_entity_path(@group), class: 'new_category_btn' %>
-    </footer>
-</div>
+  <% end %>
+  

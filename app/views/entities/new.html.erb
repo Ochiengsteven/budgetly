@@ -1,4 +1,4 @@
-<nav>
+<nav class="w-screen flex justify-between bg-blue-500 items-center px-4 mb-24">
     <div class='burger_menu'>
       <%= link_to groups_path, class: 'back_btn' do %>
         <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back--v1"/>
@@ -6,9 +6,9 @@
     </div>
     <p><%= @group.name %></p>
     <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
-  </nav>
+</nav>
   
-  <%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |form| %>
+<%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |form| %>
 
   <% if @entity.errors.any? %>
     <div id="error_explanation">

@@ -2,10 +2,9 @@ class EntitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @group = Group.find(params[:group_id])
-    @entities = @group.entities.order(created_at: :desc)
-    @total = @entities.sum(:amount)
     @user = current_user
+    @groups = @user.groups.includes(:entities).order(created_at: :desc)
+    @total_amount = @groups.sum { |group| group.entities.sum(:amount) }
   end
 
   def show
