@@ -55,6 +55,7 @@ gem 'bootsnap', require: false
 group :development, :test do
   gem 'debug', platforms: %i[mri mswin mswin64 mingw x64_mingw]
   gem 'devise'
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0'
 end
 
