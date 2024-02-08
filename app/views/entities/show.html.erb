@@ -1,0 +1,16 @@
+<div class = 'main_div'>
+  <nav>
+    <div class='burger_menu'>
+      <%= link_to groups_path, class: 'back_btn' do %>
+        <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back"/>
+      <% end %>
+    </div>
+    <p><%= @entity.name %></p>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
+  </nav>
+<div class ='delete_transaction'>
+<h1><%= @entity.name%></h1>
+<h5>Are you sure you want to delete this transaction?</h5>
+<%= button_to "Delete Transaction", group_entity_path(@entity), method: :delete, class: 'delete_btn' %>
+</div>
+</div>

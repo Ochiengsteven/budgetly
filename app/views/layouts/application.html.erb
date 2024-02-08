@@ -13,7 +13,24 @@
   <body class="prose bg-[#f0f3f0]">
     <%= yield %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice text-center text-rose-500" id="notice"><%= notice %></p>
+    <p class="alert text-center text-cyan-600" id="alert"><%= alert %></p>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+          var noticeElement = document.getElementById("notice");
+          var alertElement = document.getElementById("alert");
+
+          if (noticeElement) {
+            noticeElement.classList.add("hidden");
+          }
+
+          if (alertElement) {
+            alertElement.classList.add("hidden");
+          }
+        }, 1000);
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,36 @@
+<div class='main_div h-[90vh]'>
+  <nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
+    <div class='burger_menu'>
+      <%= link_to groups_path, class: 'back_btn' do %>
+        <img class='back_btn' src="https://img.icons8.com/ios/50/ffffff/menu--v7.png" alt="menu--v7"/>
+      <% end %>
+    </div>
+    <p>CATEGORIES</p>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
+  </nav>
+  <div class = 'groups_page px-6'>
+  <div class='total_amount'>
+    <p>Total spendings:</p>
+    <p>Kshs <%= @total_amount %></p>
+  </div>
+  <div class='groups'>
+  <% @groups.each do |group| %>
+    <%= link_to group_entities_path(group) do %>
+      <div class="individual_group">
+        <div class="group-icon">
+          <%= image_tag(group.icon) %>
+        </div>
+        <p class='group_name'><%= group.name %><br>
+        <span class = 'date'><%= group.created_at.strftime("%Y-%m-%d")%></span>
+        </p>
+        <p>Total: Kshs <%= group.entities.sum(:amount) %> </p>
+      </div>
+    <% end %>
+  <% end %>
+
+  </div>
+</div>
+</div>
+<footer id="new_category" class="w-screen flex justify-center py-2 text-gray-300">
+  <%= link_to 'NEW CATEGORY', new_group_path, class: 'text-center w-[86vw] h-14 pt-4 no-underline border-round bg-blue-500' %>
+</footer>

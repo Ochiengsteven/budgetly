@@ -5,4 +5,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: { case_sensitive: false }, presence: true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :groups
+  has_many :entities
 end

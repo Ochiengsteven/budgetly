@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources  :users, only: %i[index]
+  resources :groups, only: %i[index new create destroy] do
+    resources :entities, only: %i[index show new create destroy]
+  end
 
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
   root to: 'users#index'
 end

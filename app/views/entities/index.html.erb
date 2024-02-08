@@ -1,0 +1,31 @@
+<div class='main_div'>
+    <nav>
+        <div class='burger_menu'>
+        <%= link_to groups_path, class: 'back_btn' do %>
+            <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back"/>
+        <% end %>
+        </div>
+        <p><%= @group.name %></p>
+            <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
+    </nav>
+    <div class = 'total_amount'>
+        <p>Total amount:</p>
+        <p>Kshs <%= @total %></p>
+    </div>
+    <%= button_to "Delete Category", group_path(@group), method: :delete, class: 'delete_btn' %>
+
+    <% @entities.each do |entity| %>
+    <div class="individual_entity">
+        <%= link_to group_entity_path(@group, entity), class: 'entity-link' do %>
+            <p><%= entity.name %><br>
+                <span class='date'><%= entity.created_at.strftime("%Y-%m-%d") %></span>
+            </p>
+            <p>Kshs <%= entity.amount %></p>
+        <% end %>
+    </div>
+    <% end %>
+
+    <footer id = 'new_category'>
+     <%=link_to 'ADD TRANSACTION', new_group_entity_path(@group), class: 'new_category_btn' %>
+    </footer>
+</div>
