@@ -1,37 +1,34 @@
-<% @groups.each do |group| %>
-    <div class='container-div'>
-      <nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
-      <div class='burger_menu'>
-        <%= link_to groups_path, class: 'back_btn' do %>
-            <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back"/>
-        <% end %>
-        </div>
-        <p><%= group.name %></p>
-          <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
-      </nav>
-  
-      <div class='mx-4 flex'>
-        <p>Total amount:</p>
-        <p>Kshs <%= group.entities.sum(:amount) %></p>
-      </div>
-
-
-      <%= button_to "Delete Category", group_path(group), method: :delete, class: 'bg-red-300 p-2 mx-4 border-round text-stone-600' %>
-  
-      <% group.entities.each do |entity| %>
-        <div class="mx-4">
-          <%= link_to group_entity_path(group, entity), class: 'entity-link' do %>
-            <p><%= entity.name %><br>
-               <span class='date'><%= entity.created_at.strftime("%Y-%m-%d") %></span>
-            </p>
-            <p>Kshs <%= entity.amount %></p>
+<div class='container-div'>
+    <nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
+        <div class='burger_menu'>
+          <%= link_to groups_path, class: 'back_btn' do %>
+              <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back"/>
           <% end %>
         </div>
-      <% end %>
-  
-      <footer id='new_category' class="w-screen flex justify-center py-2 text-gray-300">
-        <%= link_to 'ADD TRANSACTION', new_group_entity_path(group), class: 'text-center w-[86vw] h-14 pt-4 no-underline border-round bg-blue-500' %>
-      </footer>
+        <p><%= @group.name %></p>
+        <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
+    </nav>
+    <div class='w-screen bg-[#fff] flex justify-between py-2 px-6 mb-12'>
+        <p class='text-stone-400 font-semibold'>Total amount:</p>
+        <p class='font-semibold'>Kshs <%= @total %></p>
     </div>
-  <% end %>
-  
+    <%= button_to "Delete Category", group_path(@group), method: :delete, class: 'bg-red-300 p-2 mx-4 border-round text-stone-600' %>
+
+    <div class=" h-[60vh] overflow-y-auto mb-4">
+      <% @entities.each do |entity| %>
+        <div class="mx-4 px-4 bg-white mt-12 rounded-[8px] flex justify-between items-center">
+            <p class="text-stone-400"><%= entity.name %><br>
+              <span class='date'><%= entity.created_at.strftime("%Y-%m-%d") %></span>
+            </p>
+            <p>Kshs <%= entity.amount %></p>
+            <%= link_to group_entity_path(@group, entity), class: 'no-underline' do %>
+              <%= image_tag 'trash.png', class: 'h-[40px]' %>
+            <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <footer id = 'new_category' class="w-screen flex justify-center py-2 text-gray-300">
+     <%=link_to 'ADD TRANSACTION', new_group_entity_path(@group), class: 'text-center w-[86vw] h-14 pt-4 no-underline border-round bg-blue-500' %>
+    </footer>
+</div>

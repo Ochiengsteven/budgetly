@@ -14,6 +14,10 @@
  *= require_self
  */
 
+/*
+ *= require font-awesome
+ */
+
 .copyable-url {
   user-select: all;
 }
@@ -21,4 +25,11 @@
 .hidden {
   opacity: 0;
   transition: opacity 1s ease-out;
+}
+
+.delete_transaction {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow:  20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
 }

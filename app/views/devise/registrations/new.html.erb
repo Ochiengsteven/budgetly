@@ -1,39 +1,48 @@
-<h2>Sign up</h2>
+<nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
+    <div class='burger_menu'>
+      <%= link_to users_path, class: 'back_btn' do %>
+        <img class='back_btn' src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="menu--v7"/>
+      <% end %>
+    </div>
+    <h3 class="text-[#fff]">Sign up</h3>
+</nav>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'mt-8 mx-4 w-[90vw]' }, html: { class: 'mt-8 mx-4 w-[90vw]' }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="field mb-2">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autocomplete: "given-name" %>
+    <%= f.text_field :first_name, autocomplete: "given-name", class: "w-full h-16" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-2">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autocomplete: "family-name" %>
+    <%= f.text_field :last_name, autocomplete: "family-name", class: "w-full h-16" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-2">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full h-16" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-2">
     <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "w-full h-16" %>
   </div>
 
-  <div class="field">
+  <div class="field mb-2">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full h-16" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="actions w-full flex justify-center mt-4">
+    <%= f.submit "Sign up", class: "w-[22vw] h-[5vh] border-round bg-blue-500 h-16" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="w-screen p-4 flex flex-col  no-underline justify-center items-center">
+ <%= render "devise/shared/links" %>
+</div>

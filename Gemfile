@@ -10,6 +10,8 @@ gem 'turbolinks'
 
 gem 'rails-controller-testing'
 
+gem "font-awesome-rails"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.1.3'
 
