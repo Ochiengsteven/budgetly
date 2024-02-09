@@ -1,26 +1,35 @@
-<h2>Log in</h2>
+<nav class="w-screen flex justify-between bg-blue-500 items-center px-4">
+    <div class='burger_menu'>
+      <%= link_to users_path, class: 'back_btn' do %>
+        <img class='back_btn' src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="menu--v7"/>
+      <% end %>
+    </div>
+    <h3 class="text-[#fff]">Log in</h3>
+</nav>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'mt-8 mx-4 w-[90vw]' }) do |f| %>
+  <div class="field mb-4">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter your email", class: "w-full h-16" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="field mb-4">
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "Enter your password", class: "w-full h-16" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="field w-full py-2">
+      <%= f.check_box :remember_me, class: "mr-2" %>
+      <%= f.label :remember_me, class: "text-stone-500" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions w-full flex justify-center">
+    <%= f.submit "Log in", class: "w-[22vw] h-[5vh] border-round bg-blue-500 h-16" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="w-screen p-4 flex flex-col  no-underline justify-center items-center">
+ <%= render "devise/shared/links" %>
+</div>
