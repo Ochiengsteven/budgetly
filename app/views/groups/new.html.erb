@@ -10,7 +10,7 @@
   </nav>
 
   <section class="mx-9">
-    <%= form_with(model: @group, url: groups_path, local: true) do |form| %>
+    <%= form_with(model: @group, url: groups_path, local: true, html: { class: 'mt-8 mx-4 w-[80vw]' }) do |form| %>
         <% if @group.errors.any? %>
         <% @group.errors.full_messages_for(:icon).each do |msg| %>
             <p class ='error'> <%= msg %> </p>
@@ -19,16 +19,16 @@
     
         <p class = 'add_category'> Add your category </p>
         <div class="field">
-        <%= form.text_field :name, placeholder: 'Category name' %>
+        <%= form.text_field :name, placeholder: 'Category name', class: "w-full mb-4"  %>
         </div>
     
         <div class="field">
-        <%= form.text_field :icon, placeholder: 'Icon URL' %>
+        <%= form.text_field :icon, placeholder: 'Icon URL', class: "w-full mb-4"  %>
         </div>
     
     
-        <div class="actions">
-        <%= form.submit 'ADD CATEGORY'%>
+        <div class="actions flex w-[80vw] justify-center">
+        <%= form.submit 'ADD CATEGORY', class: "p-2 h-[5vh] border-round bg-lime-500 h-16 rounded-[4px]"%>
         </div>
      <% end %>
  

@@ -5,10 +5,10 @@
       <% end %>
     </div>
     <p><%= @group.name %></p>
-    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'signout' %>
+    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'no-underline text-white font-semibold' %>
 </nav>
   
-<%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post) do |form| %>
+<%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post, html: { class: 'mt-8 mx-4 w-[90vw]' }) do |form| %>
 
   <% if @entity.errors.any? %>
     <div id="error_explanation">
@@ -23,20 +23,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, placeholder: "Name", class: "w-full mb-4" %>
   </div>
 
   <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, placeholder: "Amount", class: "w-full mb-4" %>
   </div>
 
     <%= form.hidden_field :user_id, value: @user.id %>
     <%= form.hidden_field :group_id, value: @group.id %>
 
 
-  <div class="actions">
-    <%= form.submit "Create Entity" %>
+  <div class="actions flex w-screen justify-center">
+    <%= form.submit "Create Entity", class: "w-[24vw] h-[5vh] border-round bg-lime-500 h-16 rounded-[4px]" %>
   </div>
 <% end %>
