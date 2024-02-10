@@ -22,3 +22,4 @@ production:
   password: <%= ENV["BUDGETLY_DATABASE_PASSWORD"] %>
   host: localhost
   port: 5432
+  url: <%= ENV["DATABASE_URL"] %>
