@@ -57,8 +57,8 @@ This project is built using the following technologies:
 ## 🚀 Live Demo & Video presentation<a name="live-demo"></a> <a name='video'></a>
 <br>
 
-- [Check the live demo, mobile version]()
-- [Check quick demonstration of the app video by clicking the link]()
+- [Check quick demonstration of the app video by clicking the link](https://www.loom.com/share/effac95aa3284c058e807cf1c7ec2ad0)
+- [Check the live demo, mobile version](https://budget-f2hw.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
