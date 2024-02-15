@@ -2,7 +2,9 @@ source 'https://rubygems.org'
 
 ruby '3.0.2'
 
-gem 'rubocop', '>= 1.0', '< 2.0'
+# gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'rubocop', '~> 1.60.2'
 
 gem 'foreman'
 
