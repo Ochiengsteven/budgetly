@@ -59,6 +59,7 @@ group :development, :test do
   gem 'devise'
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0'
+  gem 'zeitwerk', '~> 2.6.12'
 end
 
 group :development do
