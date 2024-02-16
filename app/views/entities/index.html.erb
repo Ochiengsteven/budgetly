@@ -9,7 +9,7 @@
         <%= button_to "SIGN OUT", destroy_user_session_path, method: :delete, class: 'signout' %>
     </nav>
     <div class='w-screen bg-[#fff] flex justify-between py-2 px-6 mb-12'>
-        <p class='text-stone-400 font-semibold'>Total amount:</p>
+        <p class='text-stone-400 font-semibold'>Total:</p>
         <p class='font-semibold'>Kshs <%= @total %></p>
     </div>
     <%= button_to "Delete Category", group_path(@group), method: :delete, class: 'bg-red-300 p-2 mx-4 border-round text-stone-600' %>
