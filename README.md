@@ -57,7 +57,7 @@ This project is built using the following technologies:
 ## 🚀 Live Demo & Video presentation<a name="live-demo"></a> <a name='video'></a>
 <br>
 
-- [Check quick demonstration of the app video by clicking the link](https://www.loom.com/share/effac95aa3284c058e807cf1c7ec2ad0)
+- [Check quick demonstration of the app video by clicking the link](https://www.loom.com/share/cfeb1e91097c4c64863469290b7fac6a?sid=215db808-7046-4d03-9a74-e776d9bffef3)
 - [Check the live demo, mobile version](https://budget-f2hw.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -159,13 +159,15 @@ If you like my page please show your support and give this page a star!
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 <br>
 
-#### **I would like to express my sincere gratitude to Gregoire Vella for the original design idea and for the kindness of allowing students to use his page as a template.** ####
+#### Special thanks to Gregoire Vella for the original design inspiration and his generosity in permitting students to use his page as a template. ####
 
 <br>
-I would like to extend my heartfelt gratitude to Microverse for providing me with the opportunity to undertake this capstone project. Additionally, I am immensely thankful to the code reviewers who took the time to assess my work and provide valuable feedback, which greatly contributed to the refinement and success of the project. Your guidance and support have been invaluable throughout this solo endeavor, and I am truly grateful for your contributions.
+
+I am deeply grateful to Microverse for offering me the opportunity to embark on this capstone project. My sincere appreciation goes out to the dedicated code reviewers whose meticulous assessment and insightful feedback significantly enhanced the refinement and success of the project. Your unwavering guidance and support have been instrumental in this solo endeavor, and I extend my heartfelt thanks for your invaluable contributions.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <br>
+
 
 ## 📝 License <a name="license"></a>
 
