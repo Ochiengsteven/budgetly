@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
   def index
     @user = current_user
     @groups = @user.groups.order(created_at: :desc)
-    @total_amount = @groups.sum { |group| group.entities.sum(:amount) }
   end
 
   def new
