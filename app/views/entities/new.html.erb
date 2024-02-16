@@ -1,0 +1,40 @@
+<nav class="w-screen flex justify-between bg-blue-500 items-center px-4 mb-24">
+    <div class='burger_menu'>
+      <%= link_to groups_path, class: 'back_btn' do %>
+        <img src="https://img.icons8.com/material-outlined/24/ffffff/back--v1.png" alt="back--v1"/>
+      <% end %>
+    </div>
+    <p><%= @group.name %></p>
+    <%= link_to "SIGN OUT", destroy_user_session_path, data: { turbo_method: :delete }, class: 'no-underline text-white font-semibold' %>
+</nav>
+  
+<%= form_with(model: [@group, @entity], url: group_entities_path(@group), method: :post, html: { class: 'mt-8 mx-4 w-[90vw]' }) do |form| %>
+
+  <% if @entity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entity.errors.count, "error") %> prohibits this entity from being saved:</h2>
+
+      <ul>
+        <% @entity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name", class: "w-full mb-4" %>
+  </div>
+
+  <div class="field">
+    <%= form.text_field :amount, placeholder: "Amount", class: "w-full mb-4" %>
+  </div>
+
+    <%= form.hidden_field :user_id, value: @user.id %>
+    <%= form.hidden_field :group_id, value: @group.id %>
+
+
+  <div class="actions flex w-screen justify-center">
+    <%= form.submit "Create Entity", class: "w-[24vw] h-[5vh] border-round bg-lime-500 h-16 rounded-[4px]" %>
+  </div>
+<% end %>

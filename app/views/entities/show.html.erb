@@ -1,0 +1,15 @@
+<div class="h-screen w-screen flex justify-center items-center">
+  <div class ='delete_transaction w-[70vw] h-[70vw] px-4 pt-6 text-center'>
+    <h5>Are you sure you want to delete this transaction?</h5>
+    <h3><%= @entity.name%></h3>
+
+    <div class ='flex justify-around w-full mt-12'>
+      <%= link_to groups_path, class: 'no-underline border border-cyan-500 px-4 py-2 rounded' do %>
+        <span class="text-cyan-500 border-cyan-500">Cancel</span>
+      <% end %>
+      <%= button_to group_entity_path(@entity), method: :delete, class: 'border border-rose-500 px-4 py-2 rounded' do %>
+        <span class="text-rose-500">Delete</span>
+      <% end %>
+    </div>
+  </div>
+</div>
